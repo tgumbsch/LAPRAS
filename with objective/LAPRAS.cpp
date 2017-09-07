@@ -28,10 +28,10 @@ void LAPRAS::Fit(std::vector<int> &Node, int k, double val){
     for(int tilde_k = 0; tilde_k < Node.size()-k; tilde_k++){
         new_k = tilde_k + k;
         int save = Node[new_k];
-        double obj =
+        double obj = val; //compute update for new node if there are enough values!!
         Node.erase(Node.begin()+new_k);
         if (Node.size()>0){
-                Fit(Node,new_k);
+                Fit(Node,new_k, obj);
         }
         Node.insert(Node.begin()+new_k,save);
 
