@@ -15,12 +15,13 @@ void LAPRAS::Init(std::vector<int> &Initial){
 
 void LAPRAS::Fit(std::vector<int> &Node, int k){
     for(int tilde_k = 0; tilde_k < Node.size()-k; tilde_k++){
-        std::vector<int> Branch = Node;
         new_k = tilde_k + k;
-        Branch.erase(Branch.begin()+new_k);
-        if (Branch.size()>0){
-                    Fit(Branch,new_k);
+        int save = Node[new_k];
+        Node.erase(Node.begin()+new_k);
+        if (Node.size()>0){
+                    Fit(Node,new_k);
         }
+        Node.insert(Node.begin()+new_k,save);
 
 
     }

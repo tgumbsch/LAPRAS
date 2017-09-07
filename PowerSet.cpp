@@ -1,9 +1,10 @@
 #include <math.h>
 
-void PowerSet(std::vector<int> Set, int set_size)
+void PowerSet(std::vector<int> Set)
 {
     /*set_size of power set of a set with set_size
       n is (2**n -1)*/
+    int set_size = Set.size();
     unsigned int pow_set_size = pow(2, set_size);
     int counter, j,k;
     std::vector<int> Processing(set_size);
@@ -15,7 +16,7 @@ void PowerSet(std::vector<int> Set, int set_size)
       for(j = 0; j < set_size; j++)
        {
           /* Check if jth bit in the counter is set
-             If set then pront jth element from set */
+             If set then print jth element from set */
           if(counter & (1<<j)){
             Processing[k] = Set[j];
             //std::cout << Set[j];
@@ -60,9 +61,8 @@ void BottomUp::Fit(std::vector<int> &Node){
     if (Branch.size()>0){
         Fit(Branch);
     }
-    std::vector<std::vector<int>> add;
     i=0;
-    size=Powerset.size();
+    size = loc;
     while(i<size){
         Config = Powerset[i];
         Config.push_back(x);
