@@ -72,3 +72,4 @@ void BottomUp::Fit(std::vector<int> &Node){
     }
 
 }
+
