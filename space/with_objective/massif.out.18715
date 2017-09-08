@@ -1,0 +1,572 @@
+desc: (none)
+cmd: ./main 15 0
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=4330426
+mem_heap_B=24
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=4864351
+mem_heap_B=4536
+mem_heap_extra_B=208
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=5460651
+mem_heap_B=18205
+mem_heap_extra_B=1555
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=6164416
+mem_heap_B=18461
+mem_heap_extra_B=1563
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=6458836
+mem_heap_B=1595301
+mem_heap_extra_B=1859
+mem_stacks_B=0
+heap_tree=detailed
+n2: 1595301 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n0: 22437 in 26 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=6
+#-----------
+time=10130354
+mem_heap_B=1595361
+mem_heap_extra_B=1871
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=10971473
+mem_heap_B=1607721
+mem_heap_extra_B=11415
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=11429047
+mem_heap_B=1616105
+mem_heap_extra_B=16471
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1616105 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n0: 22441 in 25 places, all below massif's threshold (1.00%)
+ n2: 20800 0x100005ABB: std::__1::vector<int, std::__1::allocator<int> >::allocate(unsigned long) (in ./main)
+  n2: 20540 0x100006484: _ZNSt3__16vectorIiNS_9allocatorIiEEE6assignIPiEENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIiNS_15iterator_traitsIS7_E9referenceEEE5valueEvE4typeES7_S7_ (in ./main)
+   n1: 20480 0x10000397B: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+    n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+     n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+       n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+        n0: 20480 in 2 places, all below massif's threshold (1.00%)
+   n0: 60 in 1 place, below massif's threshold (1.00%)
+  n0: 260 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=9
+#-----------
+time=12137034
+mem_heap_B=1628237
+mem_heap_extra_B=24451
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=12484945
+mem_heap_B=1634817
+mem_heap_extra_B=28263
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=13277882
+mem_heap_B=1649197
+mem_heap_extra_B=36891
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=13855537
+mem_heap_B=1660093
+mem_heap_extra_B=43131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=14607201
+mem_heap_B=1674833
+mem_heap_extra_B=50967
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=15492570
+mem_heap_B=1693837
+mem_heap_extra_B=59587
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1693837 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n2: 98532 0x100005ABB: std::__1::vector<int, std::__1::allocator<int> >::allocate(unsigned long) (in ./main)
+  n2: 98364 0x100006484: _ZNSt3__16vectorIiNS_9allocatorIiEEE6assignIPiEENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIiNS_15iterator_traitsIS7_E9referenceEEE5valueEvE4typeES7_S7_ (in ./main)
+   n1: 98304 0x10000397B: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+    n1: 98304 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+     n2: 98304 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 53248 0x100004863: main (in ./main)
+      n2: 45056 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+       n0: 24576 0x100004863: main (in ./main)
+       n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+        n0: 20480 in 2 places, all below massif's threshold (1.00%)
+   n0: 60 in 1 place, below massif's threshold (1.00%)
+  n0: 168 in 1 place, below massif's threshold (1.00%)
+ n0: 22441 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=16161153
+mem_heap_B=1705317
+mem_heap_extra_B=67083
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1705317 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n2: 110012 0x100005ABB: std::__1::vector<int, std::__1::allocator<int> >::allocate(unsigned long) (in ./main)
+  n2: 109896 0x100006484: _ZNSt3__16vectorIiNS_9allocatorIiEEE6assignIPiEENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIiNS_15iterator_traitsIS7_E9referenceEEE5valueEvE4typeES7_S7_ (in ./main)
+   n1: 109836 0x10000397B: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+    n2: 109836 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+     n2: 98304 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 53248 0x100004863: main (in ./main)
+      n2: 45056 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+       n0: 24576 0x100004863: main (in ./main)
+       n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+        n0: 20480 in 2 places, all below massif's threshold (1.00%)
+     n0: 11532 in 1 place, below massif's threshold (1.00%)
+   n0: 60 in 1 place, below massif's threshold (1.00%)
+  n0: 116 in 1 place, below massif's threshold (1.00%)
+ n0: 22441 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=17074117
+mem_heap_B=1722793
+mem_heap_extra_B=76879
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=17988153
+mem_heap_B=1741593
+mem_heap_extra_B=85999
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=18598029
+mem_heap_B=1753897
+mem_heap_extra_B=92375
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=18903947
+mem_heap_B=1760301
+mem_heap_extra_B=95395
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=19588019
+mem_heap_B=1774829
+mem_heap_extra_B=102107
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=20184537
+mem_heap_B=1787401
+mem_heap_extra_B=107999
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=20779682
+mem_heap_B=1800857
+mem_heap_extra_B=113679
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=21538311
+mem_heap_B=1815717
+mem_heap_extra_B=121843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=22132859
+mem_heap_B=1826881
+mem_heap_extra_B=128295
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=22579154
+mem_heap_B=1835681
+mem_heap_extra_B=132911
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1835681 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n2: 240376 0x100005ABB: std::__1::vector<int, std::__1::allocator<int> >::allocate(unsigned long) (in ./main)
+  n2: 240316 0x100006484: _ZNSt3__16vectorIiNS_9allocatorIiEEE6assignIPiEENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIiNS_15iterator_traitsIS7_E9referenceEEE5valueEvE4typeES7_S7_ (in ./main)
+   n2: 240256 0x10000397B: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+    n2: 212992 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+     n0: 114688 0x100004863: main (in ./main)
+     n2: 98304 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 53248 0x100004863: main (in ./main)
+      n2: 45056 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+       n0: 24576 0x100004863: main (in ./main)
+       n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+        n0: 20480 in 2 places, all below massif's threshold (1.00%)
+    n0: 27264 0x100004863: main (in ./main)
+   n0: 60 in 1 place, below massif's threshold (1.00%)
+  n0: 60 in 1 place, below massif's threshold (1.00%)
+ n0: 22441 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=23323993
+mem_heap_B=1850561
+mem_heap_extra_B=140575
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=23919733
+mem_heap_B=1863237
+mem_heap_extra_B=146467
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=24366860
+mem_heap_B=1871933
+mem_heap_extra_B=151179
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=24963916
+mem_heap_B=1884385
+mem_heap_extra_B=157071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=25559033
+mem_heap_B=1897201
+mem_heap_extra_B=162911
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1897201 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n2: 301896 0x100005ABB: std::__1::vector<int, std::__1::allocator<int> >::allocate(unsigned long) (in ./main)
+  n2: 301836 0x100006484: _ZNSt3__16vectorIiNS_9allocatorIiEEE6assignIPiEENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIiNS_15iterator_traitsIS7_E9referenceEEE5valueEvE4typeES7_S7_ (in ./main)
+   n2: 301776 0x10000397B: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+    n2: 212992 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+     n0: 114688 0x100004863: main (in ./main)
+     n2: 98304 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 53248 0x100004863: main (in ./main)
+      n2: 45056 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+       n0: 24576 0x100004863: main (in ./main)
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+    n0: 88784 0x100004863: main (in ./main)
+   n0: 60 in 1 place, below massif's threshold (1.00%)
+  n0: 60 in 1 place, below massif's threshold (1.00%)
+ n0: 22441 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=26004482
+mem_heap_B=1907001
+mem_heap_extra_B=167231
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=26896361
+mem_heap_B=1926681
+mem_heap_extra_B=176111
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=27535546
+mem_heap_B=1939565
+mem_heap_extra_B=182603
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=28173944
+mem_heap_B=1953329
+mem_heap_extra_B=188871
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=28812441
+mem_heap_B=1967237
+mem_heap_extra_B=195059
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=29449985
+mem_heap_B=1981809
+mem_heap_extra_B=201167
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=29875527
+mem_heap_B=1990957
+mem_heap_extra_B=205339
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=30513395
+mem_heap_B=2005037
+mem_heap_extra_B=211451
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=31152896
+mem_heap_B=2019953
+mem_heap_extra_B=217575
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=31791250
+mem_heap_B=2035009
+mem_heap_extra_B=223671
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=32563305
+mem_heap_B=2054177
+mem_heap_extra_B=230815
+mem_stacks_B=0
+heap_tree=peak
+n3: 2054177 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n2: 458872 0x100005ABB: std::__1::vector<int, std::__1::allocator<int> >::allocate(unsigned long) (in ./main)
+  n2: 458812 0x100006484: _ZNSt3__16vectorIiNS_9allocatorIiEEE6assignIPiEENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIiNS_15iterator_traitsIS7_E9referenceEEE5valueEvE4typeES7_S7_ (in ./main)
+   n2: 458752 0x10000397B: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+    n0: 245760 0x100004863: main (in ./main)
+    n2: 212992 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+     n0: 114688 0x100004863: main (in ./main)
+     n2: 98304 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 53248 0x100004863: main (in ./main)
+      n2: 45056 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+       n0: 24576 0x100004863: main (in ./main)
+       n0: 20480 in 1 place, below massif's threshold (1.00%)
+   n0: 60 in 1 place, below massif's threshold (1.00%)
+  n0: 60 in 1 place, below massif's threshold (1.00%)
+ n0: 22441 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=35463854
+mem_heap_B=2054061
+mem_heap_extra_B=230787
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=36100966
+mem_heap_B=1995965
+mem_heap_extra_B=207603
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=36949758
+mem_heap_B=1923329
+mem_heap_extra_B=173943
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=37374490
+mem_heap_B=1885993
+mem_heap_extra_B=157767
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1885993 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1572864 0x100008D4E: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+  n1: 1572864 0x10000831B: std::__1::__split_buffer<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > >&) (in ./main)
+   n1: 1572864 0x1000080B9: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::__append(unsigned long) (in ./main)
+    n1: 1572864 0x100003264: std::__1::vector<std::__1::vector<int, std::__1::allocator<int> >, std::__1::allocator<std::__1::vector<int, std::__1::allocator<int> > > >::resize(unsigned long) (in ./main)
+     n1: 1572864 0x100002FEF: BottomUp::Init(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 1572864 0x10000482C: main (in ./main)
+ n2: 290688 0x100005ABB: std::__1::vector<int, std::__1::allocator<int> >::allocate(unsigned long) (in ./main)
+  n2: 290688 0x100006484: _ZNSt3__16vectorIiNS_9allocatorIiEEE6assignIPiEENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIiNS_15iterator_traitsIS7_E9referenceEEE5valueEvE4typeES7_S7_ (in ./main)
+   n2: 290628 0x10000397B: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+    n2: 212992 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+     n0: 114688 0x100004863: main (in ./main)
+     n2: 98304 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+      n0: 53248 0x100004863: main (in ./main)
+      n2: 45056 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+       n0: 24576 0x100004863: main (in ./main)
+       n1: 20480 0x1000035DD: BottomUp::Fit(std::__1::vector<int, std::__1::allocator<int> >&, std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&) (in ./main)
+        n0: 20480 in 2 places, all below massif's threshold (1.00%)
+    n0: 77636 0x100004863: main (in ./main)
+   n0: 60 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 22441 in 25 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=46
+#-----------
+time=38223030
+mem_heap_B=1816133
+mem_heap_extra_B=122075
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=39072102
+mem_heap_B=1744637
+mem_heap_extra_B=87299
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=39709018
+mem_heap_B=1693449
+mem_heap_extra_B=59479
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=40133610
+mem_heap_B=1658053
+mem_heap_extra_B=41987
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=40428310
+mem_heap_B=1635113
+mem_heap_extra_B=28495
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=40722842
+mem_heap_B=1612517
+mem_heap_extra_B=14611
+mem_stacks_B=0
+heap_tree=empty

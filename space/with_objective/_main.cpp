@@ -12,115 +12,20 @@ struct Itemset{
     double time =1.; //runtime
 };
 
-
+#include <cstdlib>
 #include "LAPRAS.cpp"
 #include "PowerSet.cpp"
 #include <ctime>
 
 
-
-extern "C" {
-    double powerset(std::vector<double>* v,const char* TEST, double *arr, int length){
-        std::vector<double> seq(arr, arr + length);
-
-        std::vector<std::vector<double>> Dist;
-        std::vector<double> Column;
-        for(int x = 0; x < length; x++){
-            Column = {};
-            for(int y = 0; y < length; y++){
-                Column.push_back(seq[x*length + y]);
-            }
-            Dist.push_back(Column);
-        }
-
-
-        std::clock_t start;
-        std::clock_t stop;
-
-        Itemset Result;
-        Result.locations = {};
-
-        start = std::clock();
-
-
-        if (strcmp(TEST,"LAPRAS")==0 ){
-            LAPRAS LP;
-            std::vector<int> S;
-            S.resize(length);
-            std::iota(S.begin(), S.end(),0);
-            double obj = LP.Init(Dist);
-            LP.Fit(S,Dist,0,obj);
-            Result.locations = LP.return_index();
-        }
-        else if(strcmp(TEST,"BU")==0 ){
-            BottomUp BU;
-            std::vector<int> S;
-            S.resize(length);
-            std::iota(S.begin(), S.end(),0);
-            double obj = BU.Init(S,Dist);
-            BU.Fit(S, Dist);
-            Result.locations = BU.return_index();
-        }
-        else if(strcmp(TEST,"Binary")==0 ){
-            Result.locations = PowerSet(Dist,length);
-        }
-        else {
-            std::cout<< "Unrecognized function" << std::endl;
-        }
-
-        stop = std::clock();
-        Result.time = ( stop - start ) / (double) CLOCKS_PER_SEC;
-
-        v->push_back(Result.locations.size()); // v[v.size()] = size of itemset
-        for (auto const& loc : Result.locations){ // v[v.size()+1,v.size()+v[v.size()]] = items
-            v->push_back(loc);
-        }
-        return Result.time;
-
-    }
-
-    // Helper fucntions to build the vector containing the time series
-    std::vector<double>* new_vector(){
-        return new std::vector<double>;
-    }
-    void delete_vector(std::vector<double>* v){
-        // std::cout << "destructor called in C++ for " << v << std::endl;
-        delete v;
-    }
-    int vector_size(std::vector<double>* v){
-        return v->size();
-    }
-    double vector_get(std::vector<double>* v, int i){
-        return v->at(i);
-    }
-    void vector_push_back(std::vector<double>* v, int i){
-        v->push_back(i);
-    }
-}
-
 int main(int argc, const char * argv[]) {
-    vm_size_t page_size;
-    mach_port_t mach_port;
-    mach_msg_type_number_t count;
-    vm_statistics64_data_t vm_stats;
 
-    mach_port = mach_host_self();
-    count = sizeof(vm_stats) / sizeof(natural_t);
-    if (KERN_SUCCESS == host_page_size(mach_port, &page_size) &&
-        KERN_SUCCESS == host_statistics64(mach_port, HOST_VM_INFO,
-                                        (host_info64_t)&vm_stats, &count))
-    {
-        long long free_memory = (int64_t)vm_stats.free_count * (int64_t)page_size;
+        int length = atoi(argv[1]);
+        int type = atoi(argv[2]);
+        std::vector<double> seq(length*length);
 
-        long long used_memory = ((int64_t)vm_stats.active_count +
-                                 (int64_t)vm_stats.inactive_count +
-                                 (int64_t)vm_stats.wire_count) *  (int64_t)page_size;
-        printf("free memory: %lld\nused memory: %lld\n", free_memory, used_memory);
-    }
+        std::iota(seq.begin(), seq.begin() + length*length,0);
 
-        std::vector<double> seq = {1.1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
-        std::cout << seq[0];
-        int length = 10;
         std::vector<double> Column;
         std::vector<std::vector<double>> Dist;
         for(int x = 0; x < length; x++){
@@ -131,27 +36,27 @@ int main(int argc, const char * argv[]) {
             Dist.push_back(Column);
         }
 
-
-        BottomUp BU;
         std::vector<int> S;
-        S.resize(Dist.size());
+
+
+        if(type == 0){
+        BottomUp BU;
+        S.resize(length);
         std::iota(S.begin(), S.end(),0);
         double obj = BU.Init(S,Dist);
         BU.Fit(S, Dist);
-
-            mach_port = mach_host_self();
-    count = sizeof(vm_stats) / sizeof(natural_t);
-    if (KERN_SUCCESS == host_page_size(mach_port, &page_size) &&
-        KERN_SUCCESS == host_statistics64(mach_port, HOST_VM_INFO,
-                                        (host_info64_t)&vm_stats, &count))
-    {
-        long long free_memory = (int64_t)vm_stats.free_count * (int64_t)page_size;
-
-        long long used_memory = ((int64_t)vm_stats.active_count +
-                                 (int64_t)vm_stats.inactive_count +
-                                 (int64_t)vm_stats.wire_count) *  (int64_t)page_size;
-        printf("free memory: %lld\nused memory: %lld\n", free_memory, used_memory);
     }
+    else if(type == 1){
+
+        LAPRAS LA;
+        S.resize(length);
+        std::iota(S.begin(), S.end(),0);
+        double obj = LA.Init(Dist);
+        LA.Fit(S, Dist,0,obj);
+    }
+else{
+    PowerSet(Dist,length);
+}
 
 
     return 0;

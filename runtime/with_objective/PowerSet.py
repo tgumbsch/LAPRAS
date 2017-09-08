@@ -143,7 +143,7 @@ def Test(trials, runs, test, name):
 
 if __name__ == "__main__":
     runs = 3
-    trials = range(6, 26, 2)
+    trials = range(8, 26, 2)
     #trials = [5, 10, 15, 20, 25, 30]
     names = ['Binary', 'BottomUp', 'LaPRAS']
     methods = [Binary, BottomUp, LAPRAS]
@@ -165,9 +165,9 @@ if __name__ == "__main__":
     plt.tick_params(axis='both', which='major', labelsize=12)
     plt.ylabel(r'Runtime in $s$', fontsize=16)
     plt.title("Solving the ordered traveling-salesman", fontsize=16)
-    plt.savefig('Runtime_plain_raw.pdf')
+    plt.savefig('Runtime_obj_raw.pdf')
     plt.semilogy()
-    plt.savefig('Runtime_plain_log.pdf')
+    plt.savefig('Runtime_obj_log.pdf')
 
     plt.close()
 
@@ -181,4 +181,4 @@ if __name__ == "__main__":
     plt.xticks(trials)
     plt.tick_params(axis='both', which='major', labelsize=12)
     plt.title("Solving the ordered traveling-salesman", fontsize=16)
-    plt.savefig('Runtime_plain_norm.pdf')
+    plt.savefig('Runtime_obj_norm.pdf')

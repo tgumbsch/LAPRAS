@@ -1,7 +1,9 @@
 #include <math.h>
 
-std::vector<int> PowerSet(std::vector<std::vector<double>> &Dist, int length)
+void PowerSet(std::vector<std::vector<double>> &Dist, int length)
 {
+
+
     std::vector<int> Set;
     Set.resize(length);
     std::iota(Set.begin(), Set.end(),0);
@@ -46,7 +48,7 @@ std::vector<int> PowerSet(std::vector<std::vector<double>> &Dist, int length)
 
     }
     //std::cout << best_obj << std::endl;
-    return best_index;
+
 }
 
 
