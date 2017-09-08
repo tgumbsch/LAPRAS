@@ -1,10 +1,16 @@
 #include <math.h>
 
-void PowerSet(std::vector<int> Set)
+std::vector<int> PowerSet(std::vector<std::vector<double>> &Dist)
 {
+    std::vector<int> Set;
+    Set.resize(Dist.size());
+    std::iota(Set.begin(), Set.end(),1);
     /*set_size of power set of a set with set_size
       n is (2**n -1)*/
-    int set_size = Set.size();
+    int set_size = Dist.size();
+    double best_obj = 0;
+    double obj = 0;
+    std::vector<int> best_index;
     unsigned int pow_set_size = pow(2, set_size);
     int counter, j,k;
     std::vector<int> Processing(set_size);
@@ -26,31 +32,61 @@ void PowerSet(std::vector<int> Set)
        }
        //std::cout << std::endl;
        Processing.resize(k);
+
+       obj = 0;
+       for(int i = 0; i < k-1;i++){
+            obj += Dist[Processing[i]][Processing[i+1]];
+       }
+       if(obj > best_obj){
+            best_obj = obj;
+            best_index = Processing;
+       }
+
     }
+
+    return best_index;
 }
+
+
+
 
 class BottomUp{
 public:
     std::vector<int> Set;
     std::vector<int> Config;
+    std::vector<int> best_index;
+    double best_obj;
+    double obj;
     std::vector<std::vector<int>> Powerset;
     int i,size;
     int loc;
 
-    void Init(std::vector<int> &X);
-    void Fit(std::vector<int> &Node);
+    double Init(std::vector<std::vector<double>> &Dist);
+    void Fit(std::vector<int> &Node, std::vector<std::vector<double>> &Dist);
+    std::vector<int> return_index();
 
 
 };
 
+std::vector<int> BottomUp::return_index(){
+    return best_index;
+}
 
-void BottomUp::Init(std::vector<int> &X){
+
+double BottomUp::Init(std::vector<int> &X){
     Set = X;
     std::vector<int> Empty = {};
     loc = 0;
     Powerset.resize(pow(2,X.size()+1));
     Powerset[loc] = Empty;
     loc++;
+
+    best_obj = 0;
+    for(int i = 0; i< Dist.size()-1;i++){
+        best_obj += Dist[i][i+1];
+    }
+
+    return best_obj
 }
 
 void BottomUp::Fit(std::vector<int> &Node){
@@ -69,6 +105,18 @@ void BottomUp::Fit(std::vector<int> &Node){
         Powerset[loc] = Config;
         loc++;
         i++;
+
+
+       obj = 0;
+       for(int i = 0; i < k-1;i++){
+            obj += Dist[Config[i]][Config[i+1]];
+       }
+       if(obj > best_obj){
+            best_obj = obj;
+            best_index = Config;
+       }
+
+
     }
 
 }
