@@ -20,3 +20,20 @@
 ==20535==  in frame #2, created by task_set_special_port (???:)
 ==20535== 
 ==20535== Warning: set address range perms: large range [0x104897040, 0x134897040) (undefined)
+==20535== Warning: set address range perms: large range [0x104897028, 0x134897058) (noaccess)
+==20535== 
+==20535== HEAP SUMMARY:
+==20535==     in use at exit: 18,207 bytes in 162 blocks
+==20535==   total heap usage: 16,777,426 allocs, 16,777,264 frees, 1,610,638,731 bytes allocated
+==20535== 
+==20535== LEAK SUMMARY:
+==20535==    definitely lost: 0 bytes in 0 blocks
+==20535==    indirectly lost: 0 bytes in 0 blocks
+==20535==      possibly lost: 72 bytes in 3 blocks
+==20535==    still reachable: 200 bytes in 6 blocks
+==20535==         suppressed: 17,935 bytes in 153 blocks
+==20535== Rerun with --leak-check=full to see details of leaked memory
+==20535== 
+==20535== For counts of detected and suppressed errors, rerun with: -v
+==20535== Use --track-origins=yes to see where uninitialised values come from
+==20535== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 4 from 4)
