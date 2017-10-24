@@ -1,37 +1,55 @@
-==20230== Memcheck, a memory error detector
-==20230== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==20230== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==20230== Command: ./main 10 2
-==20230== 
-==20230== Syscall param msg->desc.port.name points to uninitialised byte(s)
-==20230==    at 0x1004A534A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
-==20230==    by 0x1004A4796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
-==20230==    by 0x10049E485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
-==20230==    by 0x10063A10E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
-==20230==    by 0x10063A458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
-==20230==    by 0x10016A9DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
-==20230==    by 0x100028A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==20230==    by 0x100028C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==20230==    by 0x1000244A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==20230==    by 0x100024440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==20230==    by 0x100023523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==20230==    by 0x1000235B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
-==20230==  Address 0x10489bbcc is on thread 1's stack
-==20230==  in frame #2, created by task_set_special_port (???:)
-==20230== 
-==20230== 
-==20230== HEAP SUMMARY:
-==20230==     in use at exit: 18,207 bytes in 162 blocks
-==20230==   total heap usage: 209 allocs, 47 frees, 27,199 bytes allocated
-==20230== 
-==20230== LEAK SUMMARY:
-==20230==    definitely lost: 0 bytes in 0 blocks
-==20230==    indirectly lost: 0 bytes in 0 blocks
-==20230==      possibly lost: 72 bytes in 3 blocks
-==20230==    still reachable: 200 bytes in 6 blocks
-==20230==         suppressed: 17,935 bytes in 153 blocks
-==20230== Rerun with --leak-check=full to see details of leaked memory
-==20230== 
-==20230== For counts of detected and suppressed errors, rerun with: -v
-==20230== Use --track-origins=yes to see where uninitialised values come from
-==20230== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 4 from 4)
+==4106== Memcheck, a memory error detector
+==4106== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4106== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==4106== Command: ./main 10 2
+==4106== 
+==4106== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==4106==    at 0x1004A634A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==4106==    by 0x1004A5796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==4106==    by 0x10049F485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==4106==    by 0x10063B10E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==4106==    by 0x10063B458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==4106==    by 0x10016B9DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4106==    by 0x100029A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4106==    by 0x100029C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4106==    by 0x1000254A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4106==    by 0x100025440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4106==    by 0x100024523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4106==    by 0x1000245B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4106==  Address 0x10489cbcc is on thread 1's stack
+==4106==  in frame #2, created by task_set_special_port (???:)
+==4106== 
+==4106== Conditional jump or move depends on uninitialised value(s)
+==4106==    at 0x1000036F4: PowerSet(std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&, int) (in ./main)
+==4106==    by 0x100005C66: main (in ./main)
+==4106== 
+==4106== Invalid read of size 4
+==4106==    at 0x100001CD5: std::__1::vector<int, std::__1::allocator<int> >::insert(std::__1::__wrap_iter<int const*>, int const&) (in ./main)
+==4106==    by 0x10000358B: PowerSet(std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&, int) (in ./main)
+==4106==    by 0x100005C66: main (in ./main)
+==4106==  Address 0x100b69c78 is 0 bytes after a block of size 40 alloc'd
+==4106==    at 0x1000A9616: malloc (in /usr/local/Cellar/valgrind/3.13.0/lib/valgrind/vgpreload_memcheck-amd64-darwin.so)
+==4106==    by 0x100193E0D: operator new(unsigned long) (in /usr/lib/libc++abi.dylib)
+==4106==    by 0x10000880B: std::__1::__split_buffer<int, std::__1::allocator<int>&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<int>&) (in ./main)
+==4106==    by 0x100007EBC: std::__1::__split_buffer<int, std::__1::allocator<int>&>::__split_buffer(unsigned long, unsigned long, std::__1::allocator<int>&) (in ./main)
+==4106==    by 0x100008E99: std::__1::vector<int, std::__1::allocator<int> >::__append(unsigned long) (in ./main)
+==4106==    by 0x10000389A: std::__1::vector<int, std::__1::allocator<int> >::resize(unsigned long) (in ./main)
+==4106==    by 0x100002899: PowerSet(std::__1::vector<std::__1::vector<double, std::__1::allocator<double> >, std::__1::allocator<std::__1::vector<double, std::__1::allocator<double> > > >&, int) (in ./main)
+==4106==    by 0x100005C66: main (in ./main)
+==4106== 
+==4106== 
+==4106== HEAP SUMMARY:
+==4106==     in use at exit: 18,193 bytes in 162 blocks
+==4106==   total heap usage: 212 allocs, 50 frees, 27,705 bytes allocated
+==4106== 
+==4106== LEAK SUMMARY:
+==4106==    definitely lost: 0 bytes in 0 blocks
+==4106==    indirectly lost: 0 bytes in 0 blocks
+==4106==      possibly lost: 72 bytes in 3 blocks
+==4106==    still reachable: 200 bytes in 6 blocks
+==4106==         suppressed: 17,921 bytes in 153 blocks
+==4106== Rerun with --leak-check=full to see details of leaked memory
+==4106== 
+==4106== For counts of detected and suppressed errors, rerun with: -v
+==4106== Use --track-origins=yes to see where uninitialised values come from
+==4106== ERROR SUMMARY: 5 errors from 3 contexts (suppressed: 4 from 4)

@@ -1,8 +1,8 @@
 #include <math.h>
 
-void PowerSet(std::vector<std::vector<double>> &Dist, int length)
-{
 
+std::vector<int> PowerSet(std::vector<std::vector<double>> &Dist, int length)
+{
 
     std::vector<int> Set;
     Set.resize(length);
@@ -11,46 +11,52 @@ void PowerSet(std::vector<std::vector<double>> &Dist, int length)
     /*set_size of power set of a set with set_size
       n is (2**n -1)*/
     int set_size = length;
-    double best_obj = 0;
-    double obj = 0;
-    std::vector<int> best_index;
     unsigned int pow_set_size = pow(2, set_size);
-    int counter, j,k;
+    int counter, mask, affected, j,k;
+    std::vector<int> ToBeRemoved(Set.size());
     std::vector<int> Processing(set_size);
-
+    double obj, best_obj;
+    std::vector<int> best_index;
 
     /*Run from counter 000..0 to 111..1*/
-    for(counter = 0; counter < pow_set_size; counter++)
+    counter = 0;
+    k=0;
+    obj = 0;
+    while(counter < pow_set_size)
     {
-       k=0;
-      for(j = 0; j < set_size; j++)
-       {
-          /* Check if jth bit in the counter is set
-             If set then print jth element from set */
-          if(counter & (1<<j)){
-            Processing[k] = Set[j];
-            //std::cout << Set[j];
-            k++;
+
+       // Bitwise increment of counter
+        mask = 1;
+        affected = 0;
+        // This loop has armortized factor of O(1)
+        while (counter & mask)
+        {
+            if(affected>1){
+                obj -= Dist[Processing[affected-1]][Processing[affected]];
+            }
+            Processing.erase(Processing.begin()); //what are the armortized costs of this?
+            k--;
+            counter &= ~mask;
+            mask <<= 1;
+            affected++;
+        }
+        counter |= mask;
+        Processing.insert(Processing.begin(),Set[affected]);
+        k++;
+
+        if(k>1){
+            obj += Dist[Processing[k-2]][Processing[k-1]];
         }
 
-       }
-       //std::cout << std::endl;
-       Processing.resize(k);
-
-       obj = 0;
-       for(int i = 0; i < k-1;i++){
-            obj += Dist[Processing[i]][Processing[i+1]];
-       }
        if(obj > best_obj){
             best_obj = obj;
             best_index = Processing;
        }
-
     }
-    //std::cout << best_obj << std::endl;
+
+return best_index;
 
 }
-
 
 
 

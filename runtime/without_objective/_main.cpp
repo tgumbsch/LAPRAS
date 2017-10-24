@@ -81,7 +81,7 @@ int main(){
     std::clock_t stop;
     int it = 1;
 
-    for(int i = 20; i<21; i++){
+    for(int i = 25; i<26; i++){
 
         std::vector<int> Set(i);
         std::iota(Set.begin(), Set.end(),0);
@@ -109,6 +109,7 @@ int main(){
 
         Set.resize(i);
         std::iota(Set.begin(), Set.end(),0);
+
 
         start = std::clock();
         for(int j = 0; j< it;j++){

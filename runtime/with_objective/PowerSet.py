@@ -143,7 +143,7 @@ def Test(trials, runs, test, name):
 
 if __name__ == "__main__":
     runs = 3
-    trials = range(8, 26, 2)
+    trials = range(8, 24, 2)
     #trials = [5, 10, 15, 20, 25, 30]
     names = ['Binary', 'BottomUp', 'LaPRAS']
     methods = [Binary, BottomUp, LAPRAS]

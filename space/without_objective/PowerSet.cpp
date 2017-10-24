@@ -1,4 +1,5 @@
 #include <math.h>
+#include <bitset>
 
 void PowerSet(std::vector<int> Set)
 {
@@ -6,28 +7,33 @@ void PowerSet(std::vector<int> Set)
       n is (2**n -1)*/
     int set_size = Set.size();
     unsigned int pow_set_size = pow(2, set_size);
-    int counter, j,k;
+    int counter, mask, affected, j,k;
+    std::vector<int> ToBeRemoved(Set.size());
     std::vector<int> Processing(set_size);
 
     /*Run from counter 000..0 to 111..1*/
-    for(counter = 0; counter < pow_set_size; counter++)
+    counter = 0;
+    while(counter < pow_set_size)
     {
        k=0;
-      for(j = 0; j < set_size; j++)
-       {
-          /* Check if jth bit in the counter is set
-             If set then print jth element from set */
-          if(counter & (1<<j)){
-            Processing[k] = Set[j];
-            //std::cout << Set[j];
-            k++;
-        }
 
-       }
-       //std::cout << std::endl;
-       Processing.resize(k);
+       // Bitwise increment of counter
+        mask = 1;
+        affected = 0;
+        // This loop has armortized factor of O(1)
+        while (counter & mask)
+        {
+            Processing.erase(Processing.begin()); //what are the armortized costs of this?
+            counter &= ~mask;
+            mask <<= 1;
+            affected++;
+        }
+        counter |= mask;
+        Processing.insert(Processing.begin(),Set[affected]);
     }
+
 }
+
 
 class BottomUp{
 public:

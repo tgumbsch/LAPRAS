@@ -206,10 +206,13 @@ if __name__ == "__main__":
     plt.rc('font', family='serif')
 
     for n, m in zip(names, txtfile):
+        trials = range(6, 28, 2)
         with open(m) as f:
             content = f.readlines()
             content = [int(x.replace(',', '')) for x in content]
-        print content
+        if n == 'BottomUp':
+            trials = trials[:3]
+            content = content[:3]
         plt.plot(trials, content, label=n)
     plt.legend(loc='best', fontsize=16)
     plt.xlabel('Set size', fontsize=16)
@@ -224,9 +227,13 @@ if __name__ == "__main__":
     plt.close()
 
     for n, m in zip(names, txtfile):
+        trials = range(6, 28, 2)
         with open(m) as f:
             content = f.readlines()
             content = [int(x.replace(',', '')) for x in content]
+        if n == 'BottomUp':
+            trials = trials[:3]
+            content = content[:3]
         plt.plot(trials, [i / content[0] for i in content], label=n)
     plt.legend(loc='best', fontsize=16)
     plt.xlabel(r'Set size', fontsize=16)

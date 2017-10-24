@@ -1,37 +1,37 @@
-==18774== Memcheck, a memory error detector
-==18774== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==18774== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==18774== Command: ./main 16 0
-==18774== 
-==18774== Syscall param msg->desc.port.name points to uninitialised byte(s)
-==18774==    at 0x1004A534A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
-==18774==    by 0x1004A4796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
-==18774==    by 0x10049E485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
-==18774==    by 0x10063A10E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
-==18774==    by 0x10063A458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
-==18774==    by 0x10016A9DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
-==18774==    by 0x100028A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==18774==    by 0x100028C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==18774==    by 0x1000244A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==18774==    by 0x100024440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==18774==    by 0x100023523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==18774==    by 0x1000235B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
-==18774==  Address 0x10489bbcc is on thread 1's stack
-==18774==  in frame #2, created by task_set_special_port (???:)
-==18774== 
-==18774== 
-==18774== HEAP SUMMARY:
-==18774==     in use at exit: 18,207 bytes in 162 blocks
-==18774==   total heap usage: 32,995 allocs, 32,833 frees, 4,158,999 bytes allocated
-==18774== 
-==18774== LEAK SUMMARY:
-==18774==    definitely lost: 0 bytes in 0 blocks
-==18774==    indirectly lost: 0 bytes in 0 blocks
-==18774==      possibly lost: 72 bytes in 3 blocks
-==18774==    still reachable: 200 bytes in 6 blocks
-==18774==         suppressed: 17,935 bytes in 153 blocks
-==18774== Rerun with --leak-check=full to see details of leaked memory
-==18774== 
-==18774== For counts of detected and suppressed errors, rerun with: -v
-==18774== Use --track-origins=yes to see where uninitialised values come from
-==18774== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 4 from 4)
+==3989== Memcheck, a memory error detector
+==3989== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3989== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==3989== Command: ./main 16 0
+==3989== 
+==3989== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==3989==    at 0x1004A634A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==3989==    by 0x1004A5796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==3989==    by 0x10049F485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==3989==    by 0x10063B10E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==3989==    by 0x10063B458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==3989==    by 0x10016B9DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==3989==    by 0x100029A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==3989==    by 0x100029C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==3989==    by 0x1000254A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==3989==    by 0x100025440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==3989==    by 0x100024523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==3989==    by 0x1000245B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==3989==  Address 0x10489cbcc is on thread 1's stack
+==3989==  in frame #2, created by task_set_special_port (???:)
+==3989== 
+==3989== 
+==3989== HEAP SUMMARY:
+==3989==     in use at exit: 18,193 bytes in 162 blocks
+==3989==   total heap usage: 32,995 allocs, 32,833 frees, 4,158,985 bytes allocated
+==3989== 
+==3989== LEAK SUMMARY:
+==3989==    definitely lost: 0 bytes in 0 blocks
+==3989==    indirectly lost: 0 bytes in 0 blocks
+==3989==      possibly lost: 72 bytes in 3 blocks
+==3989==    still reachable: 200 bytes in 6 blocks
+==3989==         suppressed: 17,921 bytes in 153 blocks
+==3989== Rerun with --leak-check=full to see details of leaked memory
+==3989== 
+==3989== For counts of detected and suppressed errors, rerun with: -v
+==3989== Use --track-origins=yes to see where uninitialised values come from
+==3989== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 4 from 4)
