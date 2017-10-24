@@ -1,6 +1,9 @@
 # LaPRAS    
 Linear processing of recursvely arranged subsets.   
 
+The three implementations solve the following objective:
+$math$
+
 This repositopry contains optimal (runtime and memory) algorithm to iterate over a power set.   
 
 ## Quickstart  
