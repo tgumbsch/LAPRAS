@@ -3,11 +3,11 @@ Linear processing of recursvely arranged subsets.
 
 This repositopry contains optimal (runtime and memory) algorithm to iterate over a power set.   
 
-## Quickstart.  
+## Quickstart  
 
 To recover the runtime plot, run `example.sh`.   
 
-## Use the Python function.  
+## Use the Python function  
 
 Copy `lib` to your project directory. To compile the C++ core, run.  
 
@@ -23,6 +23,7 @@ Then, in your Python code, use the module as:
 ```
 import lib.PowerSet as P
 itemset_index = P.LAPRAS(D.flatten())
-```.   
+```
+
 
 where `D` is the distance matrix between all pairs of observations.   
