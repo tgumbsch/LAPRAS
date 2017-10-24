@@ -9,7 +9,7 @@ Method: `Binary` and `LAPRAS` are optimal (runime and memory) algorithms to solv
 
 To recover the runtime plot, run `example.sh`.   
 
-## Use the Python function  
+## TODO: Use the Python function  
 
 Copy `lib` to your project directory. To compile the C++ core, run.  
 
