@@ -14,7 +14,7 @@ To recover the [`Runtime plot`](./Runtime_obj_raw.pdf), run `example.sh`.
 Method: `Binary` and `LAPRAS` are optimal (runime and memory) algorithms to solve that problem exactly. `Binary` is an exhaustive enumeration of the power set using efficient update formulae as described by _amortized analysis_. `LAPRAS` is a recursive version of the algorithm which is numerically more stable and a factor of 2 faster.  `BottomUp` is the classical approach that is only used for comparison purposes. 
 
 
-## TODO: Use the Python function  
+## Use the Python function  
 
 Copy `lib` to your project directory. To compile the C++ core, run.  
 
