@@ -71,7 +71,10 @@ class LAPRAS:
         start = time.time()
         self.time = test.powerset("LAPRAS", seq, int(np.sqrt(len(seq))))
         self.duration = time.time() - start
-        #self.items = test[length + 2:test[length + 1]]
+        no = int(test[0])
+        self.items = []
+        for num in range(no):
+            self.items.append(test[1 + num])
 
         """ #Currently not working
         number = int(test[0])
@@ -96,8 +99,10 @@ class BottomUp:
         start = time.time()
         self.time = test.powerset("BU", seq, int(np.sqrt(len(seq))))
         self.duration = time.time() - start
-        #self.items = test[length + 2:test[length + 1]]
-
+        no = int(test[0])
+        self.items = []
+        for num in range(no):
+            self.items.append(test[1 + num])
         """ #Currently not working
         number = int(test[0])
 
@@ -121,7 +126,10 @@ class Binary:
         start = time.time()
         self.time = test.powerset("Binary", seq, int(np.sqrt(len(seq))))
         self.duration = time.time() - start
-        #self.items = test[length + 2:test[length + 1]]
+        no = int(test[0])
+        self.items = []
+        for num in range(no):
+            self.items.append(test[1 + num])
 
         """ #Currently not working
         number = int(test[0])
@@ -141,7 +149,6 @@ def Test(trials, runs, test, name):
         time = []
         for r in range(runs):
             single_run = test(Set)
-            #print(single_run.items)
             time.append(single_run.time)
         Runtime.append(time)
     np.save('./lib/' + name + str(trials) + str(runs) + '.npy', np.asarray(Runtime))
