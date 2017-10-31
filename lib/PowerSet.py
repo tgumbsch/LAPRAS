@@ -71,10 +71,10 @@ class LAPRAS:
         start = time.time()
         self.time = test.powerset("LAPRAS", seq, int(np.sqrt(len(seq))))
         self.duration = time.time() - start
-        no = int(test[0])
-        self.items = []
-        for num in range(no):
-            self.items.append(test[1 + num])
+        #no = int(test[0])
+        #self.items = []
+        # for num in range(no):
+        #    self.items.append(test[1 + num])
 
         """ #Currently not working
         number = int(test[0])
@@ -99,10 +99,38 @@ class BottomUp:
         start = time.time()
         self.time = test.powerset("BU", seq, int(np.sqrt(len(seq))))
         self.duration = time.time() - start
-        no = int(test[0])
-        self.items = []
-        for num in range(no):
-            self.items.append(test[1 + num])
+        #no = int(test[0])
+        #self.items = []
+        # for num in range(no):
+        #    self.items.append(test[1 + num])
+        """ #Currently not working
+        number = int(test[0])
+
+        self.itemset = []
+        for n in range(number):
+            self.itemset.append(int(test[n + 1]))
+        """
+
+        del test
+
+
+class _Binary:
+
+    def __init__(self, seq):
+        gc.collect()
+
+        length = len(seq)
+        Vector = create_lib(len(seq))
+        test = Vector()
+
+        start = time.time()
+        self.time = test.powerset("SlowBinary", seq, int(np.sqrt(len(seq))))
+        self.duration = time.time() - start
+        #no = int(test[0])
+        #self.items = []
+        # for num in range(no):
+        #    self.items.append(test[1 + num])
+
         """ #Currently not working
         number = int(test[0])
 
@@ -126,10 +154,10 @@ class Binary:
         start = time.time()
         self.time = test.powerset("Binary", seq, int(np.sqrt(len(seq))))
         self.duration = time.time() - start
-        no = int(test[0])
-        self.items = []
-        for num in range(no):
-            self.items.append(test[1 + num])
+        #no = int(test[0])
+        #self.items = []
+        # for num in range(no):
+        #    self.items.append(test[1 + num])
 
         """ #Currently not working
         number = int(test[0])
@@ -148,6 +176,7 @@ def Test(trials, runs, test, name):
         Set = np.random.randn(t**2)
         time = []
         for r in range(runs):
+            # print(test)
             single_run = test(Set)
             time.append(single_run.time)
         Runtime.append(time)
@@ -156,41 +185,47 @@ def Test(trials, runs, test, name):
 
 if __name__ == "__main__":
     runs = 3
-    trials = range(8, 24, 2)
+    trials = range(6, 26, 2)
     #trials = [5, 10, 15, 20, 25, 30]
-    names = ['Binary', 'BottomUp', 'LaPRAS']
-    methods = [Binary, BottomUp, LAPRAS]
+    names = ['FastBinary', 'Binary', 'BottomUp', 'LaPRAS']
+    methods = [Binary, _Binary, BottomUp, LAPRAS]
+
+    color = ['lightblue', 'darkblue', 'red', 'green']
 
     from matplotlib import pyplot as plt
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif')
+    plt.tick_params(labelsize=16)
 
-    for n, m in zip(names, methods):
-        Test(trials, runs, m, n)
-
+    #for n, m in zip(names, methods):
+    #    Test(trials, runs, m, n)
+    i = 0
     for n, m in zip(names, methods):
         Runtime = np.load('./lib/' + n + str(trials) + str(runs) + '.npy')
         print(n, np.mean(Runtime, axis=1))
-        plt.errorbar(trials, np.mean(Runtime, axis=1), yerr=np.std(Runtime, axis=1), label=n)
+        plt.errorbar(trials, np.mean(Runtime, axis=1), yerr=np.std(Runtime, axis=1), color=color[i], linewidth=3, label=n)
+        i = i + 1
     plt.legend(loc='best', fontsize=16)
     plt.xlabel('Set size', fontsize=16)
     plt.xticks(trials)
+    plt.xlim((trials[0], trials[-1]))
     plt.tick_params(axis='both', which='major', labelsize=12)
     plt.ylabel(r'Runtime in $s$', fontsize=16)
-    plt.title("Solving the ordered traveling-salesman", fontsize=16)
+    #plt.title("Solving the ordered traveling-salesman", fontsize=16)
     plt.savefig('Runtime_obj_raw.pdf')
 
     plt.close()
-    """
+    i = 0
     for n, m in zip(names, methods):
-        Runtime = np.load(n + str(trials) + str(runs) + '.npy')
-        plt.plot(trials, np.mean(Runtime, axis=1) / np.mean(Runtime, axis=1)[0], label=n)
+        Runtime = np.load('./lib/' + n + str(trials) + str(runs) + '.npy')
+        plt.plot(trials, np.mean(Runtime, axis=1) / (np.mean(Runtime, axis=1)[0]), color=color[i], linewidth=3, label=n)
+        i = i + 1
     plt.legend(loc='best', fontsize=16)
     plt.xlabel(r'Set size', fontsize=16)
-    plt.ylabel(r'Normalized runtime', fontsize=16)
+    plt.ylabel(r'Runtime normalized to $n=' + str(trials[0]) + r'$', fontsize=16)
     plt.semilogy()
     plt.xticks(trials)
+    plt.xlim((trials[0], trials[-1]))
     plt.tick_params(axis='both', which='major', labelsize=12)
-    plt.title("Solving the ordered traveling-salesman", fontsize=16)
+    #plt.title("Solving the ordered traveling-salesman", fontsize=16)
     plt.savefig('Runtime_obj_norm.pdf')
-    """

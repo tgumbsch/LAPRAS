@@ -36,8 +36,11 @@ int main(int argc, const char * argv[]) {
         LA.Init(seq);
         LA.Fit(seq, 0);
     }
+else if(type == 2){
+    FastBinary(seq);
+}
 else{
-    PowerSet(seq);
+    Binary(seq);
 }
 
 

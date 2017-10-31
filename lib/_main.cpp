@@ -32,6 +32,9 @@ extern "C" {
             }
             Dist.push_back(Column);
         }
+        std::vector<int> S;
+        S.resize(length);
+        std::iota(S.begin(), S.end(),0);
 
 
         std::clock_t start;
@@ -45,24 +48,20 @@ extern "C" {
 
         if (strcmp(TEST,"LAPRAS")==0 ){
             LAPRAS LP;
-            std::vector<int> S;
-            S.resize(length);
-            std::iota(S.begin(), S.end(),0);
-            double obj = LP.Init(Dist);
-            LP.Fit(S,Dist,0,obj);
-            Result.locations = LP.return_index();
+            LP.Fit(S,0);
+            //Result.locations = LP.return_index();
         }
         else if(strcmp(TEST,"BU")==0 ){
             BottomUp BU;
-            std::vector<int> S;
-            S.resize(length);
-            std::iota(S.begin(), S.end(),0);
-            double obj = BU.Init(S,Dist);
-            BU.Fit(S, Dist);
-            Result.locations = BU.return_index();
+            BU.Init(S);
+            BU.Fit(S);
+            //Result.locations = BU.return_index();
         }
         else if(strcmp(TEST,"Binary")==0 ){
-            Result.locations = PowerSet(Dist,length);
+            FastBinary(S);
+        }
+        else if(strcmp(TEST,"SlowBinary")==0 ){
+            Binary(S);
         }
         else {
             std::cout<< "Unrecognized function" << std::endl;
@@ -136,8 +135,8 @@ int main(int argc, const char * argv[]) {
         std::vector<int> S;
         S.resize(Dist.size());
         std::iota(S.begin(), S.end(),0);
-        double obj = BU.Init(S,Dist);
-        BU.Fit(S, Dist);
+        //double obj = BU.Init(S);
+        BU.Fit(S);
 
             mach_port = mach_host_self();
     count = sizeof(vm_stats) / sizeof(natural_t);

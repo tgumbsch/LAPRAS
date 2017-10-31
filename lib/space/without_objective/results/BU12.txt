@@ -1,37 +1,49 @@
-==20525== Memcheck, a memory error detector
-==20525== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==20525== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==20525== Command: ./main 12 0
-==20525== 
-==20525== Syscall param msg->desc.port.name points to uninitialised byte(s)
-==20525==    at 0x10049E34A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
-==20525==    by 0x10049D796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
-==20525==    by 0x100497485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
-==20525==    by 0x10063310E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
-==20525==    by 0x100633458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
-==20525==    by 0x1001639DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
-==20525==    by 0x100021A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==20525==    by 0x100021C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
-==20525==    by 0x10001D4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==20525==    by 0x10001D440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==20525==    by 0x10001C523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
-==20525==    by 0x10001C5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
-==20525==  Address 0x104894bcc is on thread 1's stack
-==20525==  in frame #2, created by task_set_special_port (???:)
-==20525== 
-==20525== 
-==20525== HEAP SUMMARY:
-==20525==     in use at exit: 18,207 bytes in 162 blocks
-==20525==   total heap usage: 4,293 allocs, 4,131 frees, 319,795 bytes allocated
-==20525== 
-==20525== LEAK SUMMARY:
-==20525==    definitely lost: 0 bytes in 0 blocks
-==20525==    indirectly lost: 0 bytes in 0 blocks
-==20525==      possibly lost: 72 bytes in 3 blocks
-==20525==    still reachable: 200 bytes in 6 blocks
-==20525==         suppressed: 17,935 bytes in 153 blocks
-==20525== Rerun with --leak-check=full to see details of leaked memory
-==20525== 
-==20525== For counts of detected and suppressed errors, rerun with: -v
-==20525== Use --track-origins=yes to see where uninitialised values come from
-==20525== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 4 from 4)
+==4891== Memcheck, a memory error detector
+==4891== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4891== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==4891== Command: ./main 12 0
+==4891== 
+==4891== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==4891==    at 0x1004A034A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==4891==    by 0x10049F796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==4891==    by 0x100499485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==4891==    by 0x10063510E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==4891==    by 0x100635458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==4891==    by 0x1001659DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4891==    by 0x100023A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4891==    by 0x100023C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4891==    by 0x10001F4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4891==    by 0x10001F440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4891==    by 0x10001E523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4891==    by 0x10001E5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4891==  Address 0x104896bcc is on thread 1's stack
+==4891==  in frame #2, created by task_set_special_port (???:)
+==4891== 
+==4891== 
+==4891== Process terminating with default action of signal 2 (SIGINT)
+==4891==    at 0x100023161: ImageLoaderMachO::libPath(unsigned int) const (in /usr/lib/dyld)
+==4891==    by 0x100022D45: ImageLoaderMachO::findExportedSymbol(char const*, bool, char const*, ImageLoader const**) const (in /usr/lib/dyld)
+==4891==    by 0x10001D897: ImageLoader::findExportedSymbolAddress(ImageLoader::LinkContext const&, char const*, ImageLoader const*, int, bool, ImageLoader const**, unsigned long*) const (in /usr/lib/dyld)
+==4891==    by 0x1000292F1: ImageLoaderMachOCompressed::resolveTwolevel(ImageLoader::LinkContext const&, char const*, ImageLoader const*, ImageLoader const*, unsigned int, bool, bool, ImageLoader const**) (in /usr/lib/dyld)
+==4891==    by 0x100029550: ImageLoaderMachOCompressed::resolve(ImageLoader::LinkContext const&, char const*, unsigned char, long, ImageLoader const**, ImageLoaderMachOCompressed::LastLookup*, bool) (in /usr/lib/dyld)
+==4891==    by 0x10002B065: ImageLoaderMachOCompressed::doBindFastLazySymbol(unsigned int, ImageLoader::LinkContext const&, void (*)(), void (*)()) (in /usr/lib/dyld)
+==4891==    by 0x10001286C: dyld::fastBindLazySymbol(ImageLoader**, unsigned long) (in /usr/lib/dyld)
+==4891==    by 0x1002F5281: dyld_stub_binder (in /usr/lib/system/libdyld.dylib)
+==4891==    by 0x10000A007: ??? (in ./main)
+==4891==    by 0x10000496B: main (in ./main)
+==4891== 
+==4891== HEAP SUMMARY:
+==4891==     in use at exit: 18,289 bytes in 164 blocks
+==4891==   total heap usage: 180 allocs, 16 frees, 24,433 bytes allocated
+==4891== 
+==4891== LEAK SUMMARY:
+==4891==    definitely lost: 0 bytes in 0 blocks
+==4891==    indirectly lost: 0 bytes in 0 blocks
+==4891==      possibly lost: 72 bytes in 3 blocks
+==4891==    still reachable: 296 bytes in 8 blocks
+==4891==         suppressed: 17,921 bytes in 153 blocks
+==4891== Rerun with --leak-check=full to see details of leaked memory
+==4891== 
+==4891== For counts of detected and suppressed errors, rerun with: -v
+==4891== Use --track-origins=yes to see where uninitialised values come from
+==4891== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 4 from 4)
