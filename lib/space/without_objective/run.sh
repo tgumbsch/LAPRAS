@@ -14,8 +14,10 @@ valgrind ./main 14 0 > results/BU14.txt 2>&1
 valgrind ./main 16 0 > results/BU16.txt 2>&1
 valgrind ./main 18 0 > results/BU18.txt 2>&1
 valgrind ./main 20 0 > results/BU20.txt 2>&1
-valgrind ./main 22 0 > results/BU22.txt 2>&1
-valgrind ./main 24 0 > results/BU24.txt 2>&1
+#valgrind ./main 22 0 > results/BU22.txt 2>&1
+#valgrind ./main 24 0 > results/BU24.txt 2>&1
+#valgrind ./main 26 0 > results/BU22.txt 2>&1
+#valgrind ./main 28 0 > results/BU24.txt 2>&1
 
 
 #valgrind ./main 4 1 > results/LP4.txt 2>&1
@@ -30,7 +32,7 @@ valgrind ./main 20 1 > results/LP20.txt 2>&1
 valgrind ./main 22 1 > results/LP22.txt 2>&1
 valgrind ./main 24 1 > results/LP24.txt 2>&1
 valgrind ./main 26 1 > results/LP26.txt 2>&1
-#valgrind ./main 28 1 > results/LP28.txt 2>&1
+valgrind ./main 28 1 > results/LP28.txt 2>&1
 
 
 #valgrind ./main 4 2 > results/PW4.txt 2>&1
@@ -45,7 +47,7 @@ valgrind ./main 20 2 > results/PW20.txt 2>&1
 valgrind ./main 22 2 > results/PW22.txt 2>&1
 valgrind ./main 24 2 > results/PW24.txt 2>&1
 valgrind ./main 26 2 > results/PW26.txt 2>&1
-#valgrind ./main 28 2 > results/PW28.txt 2>&1
+valgrind ./main 28 2 > results/PW28.txt 2>&1
 
 #valgrind ./main 4 3 > results/SPW4.txt 2>&1
 valgrind ./main 6 3 > results/SPW6.txt 2>&1
@@ -59,14 +61,14 @@ valgrind ./main 20 3 > results/SPW20.txt 2>&1
 valgrind ./main 22 3 > results/SPW22.txt 2>&1
 valgrind ./main 24 3 > results/SPW24.txt 2>&1
 valgrind ./main 26 3 > results/SPW26.txt 2>&1
-#valgrind ./main 28 3 > results/SPW28.txt 2>&1
+valgrind ./main 28 3 > results/SPW28.txt 2>&1
 
 rm BU.txt
 rm LP.txt
 rm SPW.txt
 rm PW.txt
 
-awk '/usage:/ {print $9}' results/BU4.txt >> BU.txt
+#awk '/usage:/ {print $9}' results/BU4.txt >> BU.txt
 awk '/usage:/ {print $9}' results/BU6.txt >> BU.txt
 awk '/usage:/ {print $9}' results/BU8.txt >> BU.txt
 awk '/usage:/ {print $9}' results/BU10.txt >> BU.txt
@@ -88,7 +90,7 @@ awk '/usage:/ {print $9}' results/LP20.txt >> LP.txt
 awk '/usage:/ {print $9}' results/LP22.txt >> LP.txt
 awk '/usage:/ {print $9}' results/LP24.txt >> LP.txt
 awk '/usage:/ {print $9}' results/LP26.txt >> LP.txt
-#awk '/usage:/ {print $9}' results/LP28.txt >> LP.txt
+awk '/usage:/ {print $9}' results/LP28.txt >> LP.txt
 #awk '/usage:/ {print $9}' results/PW4.txt >> PW.txt
 awk '/usage:/ {print $9}' results/PW6.txt >> PW.txt
 awk '/usage:/ {print $9}' results/PW8.txt >> PW.txt
@@ -101,7 +103,7 @@ awk '/usage:/ {print $9}' results/PW20.txt >> PW.txt
 awk '/usage:/ {print $9}' results/PW22.txt >> PW.txt
 awk '/usage:/ {print $9}' results/PW24.txt >> PW.txt
 awk '/usage:/ {print $9}' results/PW26.txt >> PW.txt
-#awk '/usage:/ {print $9}' results/PW28.txt >> PW.txt
+awk '/usage:/ {print $9}' results/PW28.txt >> PW.txt
 #awk '/usage:/ {print $9}' results/SPW4.txt >> SPW.txt
 awk '/usage:/ {print $9}' results/SPW6.txt >> SPW.txt
 awk '/usage:/ {print $9}' results/SPW8.txt >> SPW.txt
@@ -114,7 +116,7 @@ awk '/usage:/ {print $9}' results/SPW20.txt >> SPW.txt
 awk '/usage:/ {print $9}' results/SPW22.txt >> SPW.txt
 awk '/usage:/ {print $9}' results/SPW24.txt >> SPW.txt
 awk '/usage:/ {print $9}' results/SPW26.txt >> SPW.txt
-#awk '/usage:/ {print $9}' results/SPW28.txt >> SPW.txt
+awk '/usage:/ {print $9}' results/SPW28.txt >> SPW.txt
 
 
 python PowerSet.py

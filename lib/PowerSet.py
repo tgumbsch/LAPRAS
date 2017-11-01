@@ -185,7 +185,7 @@ def Test(trials, runs, test, name):
 
 if __name__ == "__main__":
     runs = 3
-    trials = range(6, 26, 2)
+    trials = range(6, 30, 2)
     #trials = [5, 10, 15, 20, 25, 30]
     names = ['FastBinary', 'Binary', 'BottomUp', 'LaPRAS']
     methods = [Binary, _Binary, BottomUp, LAPRAS]
@@ -197,8 +197,8 @@ if __name__ == "__main__":
     plt.rc('font', family='serif')
     plt.tick_params(labelsize=16)
 
-    #for n, m in zip(names, methods):
-    #    Test(trials, runs, m, n)
+    for n, m in zip(names, methods):
+        Test(trials, runs, m, n)
     i = 0
     for n, m in zip(names, methods):
         Runtime = np.load('./lib/' + n + str(trials) + str(runs) + '.npy')
@@ -218,14 +218,16 @@ if __name__ == "__main__":
     i = 0
     for n, m in zip(names, methods):
         Runtime = np.load('./lib/' + n + str(trials) + str(runs) + '.npy')
-        plt.plot(trials, np.mean(Runtime, axis=1) / (np.mean(Runtime, axis=1)[0]), color=color[i], linewidth=3, label=n)
+        plt.plot(trials, np.mean(Runtime, axis=1) / np.asarray([np.mean(Runtime, axis=1)[0] * np.power(2, k) for k in trials]), color=color[i], linewidth=3, label=n)
         i = i + 1
     plt.legend(loc='best', fontsize=16)
     plt.xlabel(r'Set size', fontsize=16)
-    plt.ylabel(r'Runtime normalized to $n=' + str(trials[0]) + r'$', fontsize=16)
-    plt.semilogy()
+    plt.ylabel(r'Normalized runtime', fontsize=16)
+    # plt.semilogy()
     plt.xticks(trials)
     plt.xlim((trials[0], trials[-1]))
     plt.tick_params(axis='both', which='major', labelsize=12)
     #plt.title("Solving the ordered traveling-salesman", fontsize=16)
     plt.savefig('Runtime_obj_norm.pdf')
+    plt.semilogy()
+    plt.savefig('Runtime_log_norm.pdf')

@@ -1,0 +1,21 @@
+==20269== Memcheck, a memory error detector
+==20269== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==20269== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==20269== Command: ./main 20 1
+==20269== 
+==20269== Syscall param msg->desc.port.name points to uninitialised byte(s)
+==20269==    at 0x1004A034A: mach_msg_trap (in /usr/lib/system/libsystem_kernel.dylib)
+==20269==    by 0x10049F796: mach_msg (in /usr/lib/system/libsystem_kernel.dylib)
+==20269==    by 0x100499485: task_set_special_port (in /usr/lib/system/libsystem_kernel.dylib)
+==20269==    by 0x10063510E: _os_trace_create_debug_control_port (in /usr/lib/system/libsystem_trace.dylib)
+==20269==    by 0x100635458: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==20269==    by 0x1001659DF: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==20269==    by 0x100023A1A: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==20269==    by 0x100023C1D: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==20269==    by 0x10001F4A9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==20269==    by 0x10001F440: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==20269==    by 0x10001E523: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==20269==    by 0x10001E5B8: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==20269==  Address 0x104896bcc is on thread 1's stack
+==20269==  in frame #2, created by task_set_special_port (???:)
+==20269== 
