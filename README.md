@@ -6,7 +6,7 @@ Objective: Given is a generalized adjecency matrix *A* of a graph. Generalized m
 
 ## Quickstart  
 
-To recover the [`Runtime plot`](./Runtime_obj_raw.pdf), run `example.sh`.   
+To recover the [`Runtime plot`](./Runtime_obj_norm.pdf), run `example.sh`.   
 
 ## Methods
 
